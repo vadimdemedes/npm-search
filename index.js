@@ -49,7 +49,7 @@ function closeMainWindow () {
 }
 
 function createTray () {
-	const tray = new electron.Tray(__dirname + '/images/icons/tray.png');
+	const tray = new electron.Tray(`${__dirname}/images/icons/tray.png`);
 	tray.setToolTip('Search npm');
 
 	tray.on('click', () => {
@@ -102,9 +102,10 @@ function createTrayMenu () {
 	});
 
 	const quit = new electron.MenuItem({
-		label: process.platform === 'darwin' ? 'Quit' : 'Exit',
-		click: exit,
-		accelerator: 'CmdOrCtrl+Q'
+		label: process.platform === 'darwin' ? `Quit ${app.getName()}` : 'Exit',
+		click() {
+			app.exit(0);
+		}
 	});
 
 	const separator = new electron.MenuItem({
@@ -165,8 +166,3 @@ app.on('ready', () => {
 	tray = createTray();
 	trayMenu = createTrayMenu();
 });
-
-function exit () {
-	tray.destroy();
-	app.exit(0);
-}
