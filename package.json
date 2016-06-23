@@ -1,0 +1,55 @@
+{
+  "name": "npm-search",
+  "productName": "NpmSearch",
+  "version": "1.0.0",
+  "description": "My excellent app",
+  "license": "MIT",
+  "repository": "vdemedes/npm-search",
+  "author": {
+    "name": "vdemedes",
+    "email": "vdemedes@gmail.com",
+    "url": "github.com/vdemedes"
+  },
+  "scripts": {
+    "test": "xo",
+    "start": "electron .",
+    "postinstall": "install-app-deps",
+    "pack": "build --dir",
+    "build": "build"
+  },
+  "build": {
+    "appId": "com.vdemedes.npm-search",
+    "app-category-type": "public.app-category.developer-tools"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css",
+    "images"
+  ],
+  "keywords": [
+    "electron-app",
+    "electron"
+  ],
+  "dependencies": {
+    "auto-launch": "^2.0.1",
+    "electron-debug": "^1.0.0",
+    "electron-positioner": "^3.0.0",
+    "titlebar": "^1.4.0"
+  },
+  "devDependencies": {
+    "devtron": "^1.1.0",
+    "electron-builder": "^5.6.2",
+    "electron-prebuilt": "^1.0.1",
+    "eslint-config-vdemedes": "^1.0.2",
+    "xo": "^0.15.1"
+  },
+  "xo": {
+    "extends": "vdemedes",
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}
