@@ -1,6 +1,8 @@
 # npm-search
 
-> My excellent app
+> Search npm via node-modules.com
+
+![](screenshot.png)
 
 
 ## Dev
